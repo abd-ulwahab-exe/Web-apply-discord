@@ -6,7 +6,6 @@ const { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder
 
 const app = express();
 
-// إعداد تطبيق Express
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,7 +16,6 @@ app.use(session({
     saveUninitialized: false
 }));
 
-// إعداد بوت ديسكورد باستخدام discord.js
 const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages]
 });
@@ -156,7 +154,7 @@ app.post('/submit-application', async (req, res) => {
 
                     // إرسال رسالة خاصة للمتقدم بالقبول
                     if (applicantUser) {
-                        await applicantUser.send('🎉 مبروك! تم قبول تقديمك على إدارة ديسكورد في Arab Camp. افتح تذكرة لاستلام رتبتك.');
+                        await applicantUser.send('🎉 مبروك! تم قبول تقديمك على إدارة ديسكورد في Arab Camp. افتح تذكرة لاستلام رتبكرتبتك.');
                     }
                 } else if (i.customId === 'reject_app') {
                     embed.setColor(15548997); // أحمر
